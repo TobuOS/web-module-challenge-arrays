@@ -79,13 +79,15 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/ 
 
-function removeLastFlavor(flavor, arr){
+function removeLastFlavor(arr){
     arr.pop()
     return arr;
+    console.log(arr)
 
 }
 
-console.log(removeLastFlavor(arr, originalFlavors))
+console.log(removeLastFlavor(originalFlavors))
+
 
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
@@ -96,12 +98,14 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(arr, index)
+function getFlavorByIndex(arr, index){
     return arr[index]
 
     /*code here*/
 
 }
+
+console.log(getFlavorByIndex(originalFlavors, 2))
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
@@ -139,6 +143,7 @@ function copy(arr, newArr){
     return newArr;
     /*code here*/
 }
+var latestFlavorList;
 
 console.log(copy(originalFlavors, latestFlavorList))
 
@@ -157,11 +162,16 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
-
-    /*code here*/
-
+function removeFlavorByName(arr, str){
+  
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i] === str) {
+           arr.splice(i, 1)
+        }
+    }
+    return arr;
 }
+console.log(removeFlavorByName(originalFlavors, 'Vanilla'));
 
 
 
